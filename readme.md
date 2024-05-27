@@ -4,7 +4,7 @@ This is a simple todo list app built with Meteor and React.
 
 ![Project Screenshot](https://github.com/brunoeduardodev/meteor-todo-list/assets/50559336/86eeedc2-35f0-448d-a1f3-45ac1f5089cd)
 
-## [Try It](meteor-todo-list-bruno.meteorapp.com)
+## [Try It](https://meteor-todo-list-bruno.meteorapp.com)
 
 ## Stack
 
