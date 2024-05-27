@@ -3,10 +3,11 @@ import { AuthCard } from "../components/AuthCard";
 import { z } from "zod";
 import { useZodForm } from "../hooks/useZodForm";
 import { AuthCardFooter } from "../components/AuthCardFooter";
-import { Box, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 import { Meteor } from "meteor/meteor";
 import { showErrorToast } from "../utils/showErrorToast";
 import { FormContainer } from "../components/FormContainer";
+import { useQueryClient } from "@tanstack/react-query";
 
 const LoginSchema = z.object({
   email: z.string().email(),
@@ -22,10 +23,13 @@ export const LoginPage = () => {
     },
   });
 
+  const queryClient = useQueryClient();
+
   const onSignIn = form.onSubmit((values) => {
     Meteor.loginWithPassword(values.email, values.password, (err) => {
       if (err) return;
       showErrorToast(err);
+      queryClient.invalidateQueries({ queryKey: ["todo.listTodos"] });
     });
   });
 

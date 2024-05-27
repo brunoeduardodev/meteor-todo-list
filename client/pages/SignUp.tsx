@@ -7,6 +7,7 @@ import { Box, TextInput } from "@mantine/core";
 import { Accounts } from "meteor/accounts-base";
 import { showErrorToast } from "../utils/showErrorToast";
 import { FormContainer } from "../components/FormContainer";
+import { useQueryClient } from "@tanstack/react-query";
 
 const LoginSchema = z.object({
   email: z.string().email(),
@@ -22,8 +23,12 @@ export const SignUpPage = () => {
     },
   });
 
+  const queryClient = useQueryClient();
+
   const onSignUp = form.onSubmit(({ email, password }) => {
     Accounts.createUser({ email, password }, (err) => {
+      queryClient.invalidateQueries({ queryKey: ["todo.listTodos"] });
+
       if (err) return;
       showErrorToast(err);
     });

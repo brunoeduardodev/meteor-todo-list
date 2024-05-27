@@ -46,6 +46,6 @@ export const listTodos = async ({ limit, page, search }: ListTodosInput) => {
 
   return {
     data: result.data as Todo[],
-    totalPages: Math.ceil(result.metadata[0]?.totalCount ?? 0 / limit),
+    totalPages: Math.ceil((result.metadata[0]?.totalCount ?? 0) / limit),
   };
 };

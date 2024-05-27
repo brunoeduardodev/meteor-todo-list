@@ -44,7 +44,10 @@ export const CreateTodoDrawer = ({ isOpen, onClose }: Props) => {
       position="right"
       withCloseButton
       opened={isOpen}
-      onClose={onClose}
+      onClose={() => {
+        form.reset();
+        onClose();
+      }}
     >
       <FormContainer onSubmit={onCreateTodo}>
         <TextInput label="Title" {...form.getInputProps("title")} />
