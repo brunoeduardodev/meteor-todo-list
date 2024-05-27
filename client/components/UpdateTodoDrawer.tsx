@@ -68,7 +68,7 @@ export const UpdateTodoDrawer = ({ isOpen, onClose, todo }: Props) => {
         <TextInput label="Title" {...form.getInputProps("title")} />
         <Checkbox
           label="Is Completed"
-          {...form.getInputProps("title")}
+          {...form.getInputProps("isCompleted")}
           checked={form.getInputProps("isCompleted").value}
         />
         <Button type="submit">Update Todo</Button>
