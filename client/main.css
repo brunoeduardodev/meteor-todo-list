@@ -1,0 +1,8 @@
+body,
+#react-target {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100svh;
+  width: 100%;
+}
