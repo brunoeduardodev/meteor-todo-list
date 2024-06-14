@@ -22,3 +22,4 @@ static-html@1.3.3-rc300.2             # Define static page content in .html file
 react-meteor-data@3.0.0-beta300.1       # React higher-order component for reactively tracking Meteor data
 zodern:types            # Pull in type declarations from other Meteor packages
 accounts-password
+montiapm:agent
