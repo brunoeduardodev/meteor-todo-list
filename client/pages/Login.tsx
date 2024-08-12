@@ -37,7 +37,7 @@ export const LoginPage = () => {
     <AuthCard title="Login">
       <FormContainer onSubmit={onSignIn}>
         <Text>
-          Gitlab 3 
+          Gitlab 3 Updated 
         </Text>
         <TextInput
           label="Email"
